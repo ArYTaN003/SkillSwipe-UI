@@ -3,6 +3,7 @@ import { useAuth } from '../../context/AuthContext';
 
 const links = [
   { to: '/dashboard', label: 'Dashboard', icon: '🏠' },
+  { to: '/swipe', label: 'Discover', icon: '🔥' },
   { to: '/profile', label: 'My Profile', icon: '👤' },
   { to: '/skills', label: 'Skills', icon: '🧩' },
   { to: '/matches', label: 'Find Matches', icon: '🔍' },

@@ -43,7 +43,7 @@ export default function SessionsPage() {
       <p style={{ color: '#888', marginBottom: '24px' }}>Sessions are accepted exchange requests in progress.</p>
       <div style={{ display: 'grid', gridTemplateColumns: '1fr 300px', gap: '24px', alignItems: 'start' }}>
         <div>
-          {loading ? <Loader /> : <SessionList sessions={sessions} onComplete={handleComplete} />}
+          {loading ? <Loader /> : <SessionList sessions={sessions} onComplete={handleComplete} currentUserId={user.userId} />}
         </div>
         <CalendarView sessions={sessions} />
       </div>

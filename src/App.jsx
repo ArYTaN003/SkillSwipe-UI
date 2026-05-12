@@ -16,6 +16,8 @@ import RequestsPage from './pages/RequestsPage';
 import SessionsPage from './pages/SessionsPage';
 import ReviewsPage from './pages/ReviewsPage';
 import AdminDashboard from './pages/AdminDashboard';
+import OnboardingPage from './pages/OnboardingPage';
+import SwipePage from './pages/SwipePage';
 
 function AppLayout() {
   return (
@@ -44,6 +46,8 @@ export default function App() {
 
             {/* Protected routes with shared layout */}
             <Route element={<ProtectedRoute><AppLayout /></ProtectedRoute>}>
+              <Route path="/onboarding" element={<OnboardingPage />} />
+              <Route path="/swipe" element={<SwipePage />} />
               <Route path="/dashboard" element={<DashboardPage />} />
               <Route path="/profile" element={<ProfilePage />} />
               <Route path="/profile/:id" element={<ProfilePage />} />

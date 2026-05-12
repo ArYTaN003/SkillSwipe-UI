@@ -8,7 +8,7 @@ import Button from '../common/Button';
 export default function RegisterForm() {
   const [form, setForm] = useState({ userName: '', userEmail: '', userPassword: '', userBio: '' });
   const [loading, setLoading] = useState(false);
-  const { register } = useAuth();
+  const { register, login } = useAuth();
   const { show } = useToast();
   const navigate = useNavigate();
 
@@ -21,8 +21,9 @@ export default function RegisterForm() {
     setLoading(true);
     try {
       await register(form);
-      show('Account created! Please sign in.', 'success');
-      navigate('/login');
+      await login(form.userEmail, form.userPassword);
+      show('Welcome to SkillSwipe! Let\'s set up your skills.', 'success');
+      navigate('/onboarding');
     } catch (err) {
       show(err.response?.data || 'Registration failed', 'error');
     } finally {

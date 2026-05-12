@@ -1,6 +1,6 @@
 import SessionCard from './SessionCard';
 
-export default function SessionList({ sessions = [], onComplete }) {
+export default function SessionList({ sessions = [], onComplete, currentUserId }) {
   if (sessions.length === 0) {
     return (
       <div style={{ textAlign: 'center', padding: '40px', color: '#999' }}>
@@ -13,7 +13,7 @@ export default function SessionList({ sessions = [], onComplete }) {
   return (
     <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
       {sessions.map((s) => (
-        <SessionCard key={s.id} session={s} onComplete={onComplete} />
+        <SessionCard key={s.id} session={s} onComplete={onComplete} currentUserId={currentUserId} />
       ))}
     </div>
   );
