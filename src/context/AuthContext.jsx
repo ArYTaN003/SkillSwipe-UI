@@ -12,14 +12,8 @@ export function AuthProvider({ children }) {
     setLoading(true);
     try {
       await authService.login(email, password);
-      // Decode user id from JWT payload to fetch full profile
-      const token = localStorage.getItem('token');
-      const payload = JSON.parse(atob(token.split('.')[1]));
-      // Find user by searching email (backend returns user on register; login only returns token)
-      const results = await userService.search(email.split('@')[0]);
-      // Try to find exact match by email in results, fallback to first result
-      let profile = results.find((u) => u.userEmail === email) || results[0];
-      if (!profile) profile = { userEmail: email };
+      // Token is now in localStorage — fetch the full profile using /me
+      const profile = await userService.getMe();
       authService.setCurrentUser(profile);
       setUser(profile);
       return profile;
@@ -32,6 +26,8 @@ export function AuthProvider({ children }) {
     setLoading(true);
     try {
       const profile = await authService.register(userData);
+      authService.setCurrentUser(profile);
+      setUser(profile);
       return profile;
     } finally {
       setLoading(false);

@@ -1,6 +1,7 @@
 import { Link, useNavigate, useLocation } from 'react-router-dom';
 import { useAuth } from '../../context/AuthContext';
 import Avatar from '../common/Avatar';
+import logo from '../../assets/SkillSwipe_Logo.jpeg';
 
 const navLinks = [
   { to: '/dashboard', label: 'Dashboard' },
@@ -27,7 +28,8 @@ export default function Navbar() {
       display: 'flex', alignItems: 'center', padding: '0 24px',
       position: 'sticky', top: 0, zIndex: 100, gap: '8px',
     }}>
-      <Link to="/dashboard" style={{ fontWeight: 700, fontSize: '18px', color: '#6c63ff', textDecoration: 'none', marginRight: '24px' }}>
+      <Link to="/dashboard" style={{ display: 'flex', alignItems: 'center', gap: '8px', fontWeight: 700, fontSize: '18px', color: '#6c63ff', textDecoration: 'none', marginRight: '24px' }}>
+        <img src={logo} alt="SkillSwipe logo" style={{ height: '32px', width: '32px', borderRadius: '6px', objectFit: 'cover' }} />
         SkillSwipe
       </Link>
 
