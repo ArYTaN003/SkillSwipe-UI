@@ -105,7 +105,6 @@ export default function OnboardingPage() {
         padding: '40px 36px', boxShadow: '0 8px 40px rgba(108,99,255,0.12)',
         width: '100%', maxWidth: '780px',
       }}>
-        {/* Header */}
         <div style={{ textAlign: 'center', marginBottom: '32px' }}>
           <h1 style={{ margin: '0 0 8px', fontSize: '28px', fontWeight: 800, color: '#6c63ff' }}>
             Set up your skills
@@ -115,7 +114,6 @@ export default function OnboardingPage() {
           </p>
         </div>
 
-        {/* Search */}
         <input
           type="text"
           placeholder="Search skills…"
@@ -129,9 +127,7 @@ export default function OnboardingPage() {
           }}
         />
 
-        {/* Two columns */}
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '32px', marginBottom: '36px' }}>
-          {/* Teach */}
           <div>
             <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '14px' }}>
               <span style={{
@@ -158,7 +154,6 @@ export default function OnboardingPage() {
             </div>
           </div>
 
-          {/* Learn */}
           <div>
             <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '14px' }}>
               <span style={{

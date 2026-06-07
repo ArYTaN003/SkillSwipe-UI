@@ -12,7 +12,6 @@ export function AuthProvider({ children }) {
     setLoading(true);
     try {
       await authService.login(email, password);
-      // Token is now in localStorage — fetch the full profile using /me
       const profile = await userService.getMe();
       authService.setCurrentUser(profile);
       setUser(profile);

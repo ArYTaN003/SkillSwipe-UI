@@ -42,7 +42,6 @@ export default function SwipePage() {
       await swipeService.action(user.userId, candidate.userId, 'PASS');
       setPassedCount((c) => c + 1);
     } catch {
-      // silently ignore pass failures
     } finally {
       removeTop();
     }
@@ -50,7 +49,6 @@ export default function SwipePage() {
 
   return (
     <div style={{ maxWidth: '600px', margin: '0 auto', padding: '40px 24px' }}>
-      {/* Header */}
       <div style={{ textAlign: 'center', marginBottom: '32px' }}>
         <h2 style={{ margin: '0 0 6px', fontSize: '24px', fontWeight: 800, color: '#1a1a2e' }}>
           Discover
@@ -60,7 +58,6 @@ export default function SwipePage() {
         </p>
       </div>
 
-      {/* Stats */}
       {(likedCount > 0 || passedCount > 0) && (
         <div style={{ display: 'flex', gap: '16px', justifyContent: 'center', marginBottom: '28px' }}>
           <span style={{ background: '#f6ffed', color: '#52c41a', padding: '6px 16px', borderRadius: '20px', fontSize: '13px', fontWeight: 600 }}>
@@ -72,7 +69,6 @@ export default function SwipePage() {
         </div>
       )}
 
-      {/* Remaining count */}
       {candidates.length > 0 && (
         <p style={{ textAlign: 'center', color: '#bbb', fontSize: '13px', marginBottom: '20px' }}>
           {candidates.length} candidate{candidates.length !== 1 ? 's' : ''} remaining
@@ -89,7 +85,6 @@ export default function SwipePage() {
         />
       )}
 
-      {/* Hint */}
       {!loading && candidates.length > 0 && (
         <p style={{ textAlign: 'center', color: '#ccc', fontSize: '12px', marginTop: '28px' }}>
           ✕ to pass &nbsp;·&nbsp; ✓ to like

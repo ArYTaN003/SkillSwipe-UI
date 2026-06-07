@@ -1,8 +1,6 @@
 import userService from './userService';
 import skillService from './skillService';
 
-// Client-side matching: find users who teach what current user wants to LEARN
-// and who want to LEARN what current user can TEACH.
 const matchService = {
   async findMatches(currentUser, mySkills) {
     const teaches = mySkills.filter((s) => s.type === 'TEACH').map((s) => s.skill.skillId);
@@ -18,7 +16,6 @@ const matchService = {
       }
     }
 
-    // De-duplicate and exclude current user
     const seen = new Set();
     return candidates.filter((u) => {
       if (u.userId === currentUser.userId || seen.has(u.userId)) return false;

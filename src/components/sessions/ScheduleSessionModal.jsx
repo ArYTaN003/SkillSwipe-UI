@@ -77,7 +77,6 @@ export default function ScheduleSessionModal({ isOpen, onClose, session }) {
         <p style={{ color: '#aaa', textAlign: 'center', padding: '20px' }}>Loading…</p>
       ) : (
         <>
-          {/* Confirmed */}
           {isConfirmed && (
             <div style={{
               background: '#f6ffed', border: '1px solid #b7eb8f', borderRadius: '10px',
@@ -102,7 +101,6 @@ export default function ScheduleSessionModal({ isOpen, onClose, session }) {
             </div>
           )}
 
-          {/* Pending incoming proposal */}
           {!isConfirmed && proposal && proposal.status === 'PENDING' && (
             <div style={{
               background: '#fffbe6', border: '1px solid #ffe58f', borderRadius: '10px',
@@ -133,7 +131,6 @@ export default function ScheduleSessionModal({ isOpen, onClose, session }) {
             </div>
           )}
 
-          {/* Propose / counter form */}
           {!isConfirmed && (
             <div>
               <p style={{ margin: '0 0 14px', fontSize: '14px', color: '#555' }}>

@@ -15,9 +15,8 @@ const swipeStyles = `
 `;
 
 export default function SwipeStack({ candidates, onLike, onPass }) {
-  const [swipeDir, setSwipeDir] = useState(null); // 'right' | 'left' | null
+  const [swipeDir, setSwipeDir] = useState(null);
 
-  // Reset animation class when the top card changes
   useEffect(() => {
     setSwipeDir(null);
   }, [candidates[0]?.userId]);
@@ -53,7 +52,6 @@ export default function SwipeStack({ candidates, onLike, onPass }) {
     <>
       <style>{swipeStyles}</style>
       <div style={{ position: 'relative', width: '340px', margin: '0 auto' }}>
-        {/* Shadow card behind */}
         {next && (
           <div style={{
             position: 'absolute', top: '12px', left: '8px', right: '8px',
@@ -61,7 +59,6 @@ export default function SwipeStack({ candidates, onLike, onPass }) {
             zIndex: 0, opacity: 0.5,
           }} />
         )}
-        {/* Top card */}
         <div className={animClass} style={{ position: 'relative', zIndex: 1 }}>
           <SwipeCard
             key={top.userId}

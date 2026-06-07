@@ -36,8 +36,6 @@ export default function ProfilePage() {
   useEffect(() => {
     if (!targetId) return;
     skillService.getAll().then(() => {});
-    // Fetch user skills via the request that returns UsersSkills objects
-    // Since there's no GET /api/users/{id}/skills endpoint, we call skills and filter client-side
   }, [targetId]);
 
   if (loading) return <Loader />;

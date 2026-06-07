@@ -1,7 +1,6 @@
 import requestService from './requestService';
 import api from '../api/axios';
 
-// Sessions are derived from ACCEPTED exchange requests.
 const sessionService = {
   async getSessions(userId) {
     const [sent, received] = await Promise.all([

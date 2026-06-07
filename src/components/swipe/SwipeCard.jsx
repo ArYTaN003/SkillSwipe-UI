@@ -16,7 +16,6 @@ export default function SwipeCard({ candidate, onLike, onPass }) {
       gap: '20px',
       position: 'relative',
     }}>
-      {/* Avatar + Name */}
       <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '12px' }}>
         <Avatar name={candidate.userName || candidate.userEmail} size={80} />
         <div style={{ textAlign: 'center' }}>
@@ -27,7 +26,6 @@ export default function SwipeCard({ candidate, onLike, onPass }) {
         </div>
       </div>
 
-      {/* Bio */}
       {candidate.userBio && (
         <p style={{
           margin: 0, fontSize: '14px', color: '#555', lineHeight: 1.6,
@@ -37,7 +35,6 @@ export default function SwipeCard({ candidate, onLike, onPass }) {
         </p>
       )}
 
-      {/* Skills they can teach you */}
       {teachSkills.length > 0 && (
         <div>
           <p style={{ margin: '0 0 8px', fontSize: '12px', fontWeight: 600, color: '#52c41a', textTransform: 'uppercase', letterSpacing: '0.5px' }}>
@@ -56,7 +53,6 @@ export default function SwipeCard({ candidate, onLike, onPass }) {
         </div>
       )}
 
-      {/* Skills they want to learn */}
       {learnSkills.length > 0 && (
         <div>
           <p style={{ margin: '0 0 8px', fontSize: '12px', fontWeight: 600, color: '#6c63ff', textTransform: 'uppercase', letterSpacing: '0.5px' }}>
@@ -75,7 +71,6 @@ export default function SwipeCard({ candidate, onLike, onPass }) {
         </div>
       )}
 
-      {/* Action buttons */}
       <div style={{ display: 'flex', gap: '16px', justifyContent: 'center', marginTop: '8px' }}>
         <button
           onClick={onPass}

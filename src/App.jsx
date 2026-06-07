@@ -39,12 +39,9 @@ export default function App() {
       <AuthProvider>
         <ToastProvider>
           <Routes>
-            {/* Public routes */}
             <Route path="/login" element={<LoginPage />} />
             <Route path="/register" element={<RegisterPage />} />
 
-
-            {/* Protected routes with shared layout */}
             <Route element={<ProtectedRoute><AppLayout /></ProtectedRoute>}>
               <Route path="/onboarding" element={<OnboardingPage />} />
               <Route path="/swipe" element={<SwipePage />} />
@@ -60,7 +57,6 @@ export default function App() {
               <Route path="/admin" element={<ProtectedRoute adminOnly><AdminDashboard /></ProtectedRoute>} />
             </Route>
 
-            {/* Redirect root */}
             <Route path="/" element={<Navigate to="/dashboard" replace />} />
             <Route path="*" element={<Navigate to="/dashboard" replace />} />
           </Routes>
